@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    tools:context=".MainActivity">
+
+    <!-- Bu, arka plan resminizin üzerine koyulacak şeffaf katmandır (Opaqueness) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.3"
+        android:background="#000000"/>
+
+    <!-- Giriş Formunu ve Butonları Barındıran CardView -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="#CCFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- CardView İçindeki Tüm Öğeleri Dikey Olarak Sıralayan Düzen -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Başlık -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOGIN"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#473F90"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- E-posta Girişi -->
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="E-posta Adresi"
+                android:inputType="textEmailAddress"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:textColorHint="#999999"
+                android:background="@drawable/rounded_edittext_bg"
+                android:drawableStart="@drawable/baseline_email_24"
+                android:drawablePadding="12dp"/>
+
+            <!-- Şifre Girişi -->
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Şifre"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:layout_marginBottom="32dp"
+                android:textColorHint="#999999"
+                android:background="@drawable/rounded_edittext_bg"
+                android:drawableStart="@drawable/outline_air_24"
+                android:drawablePadding="12dp"/>
+
+            <!-- Butonlar (Yatay Düzen) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- Giriş Yap Butonu -->
+                <Button
+                    android:id="@+id/loginBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_primary_bg"
+                    android:onClick="loginclicked"
+                    android:paddingVertical="12dp"
+                    android:stateListAnimator="@null"
+                    android:text="Giriş Yap"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <!-- Kaydol Butonu -->
+                <Button
+                    android:id="@+id/signupBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_secondary_bg"
+                    android:onClick="signupclicked"
+                    android:paddingVertical="12dp"
+                    android:stateListAnimator="@null"
+                    android:text="Kaydol"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Şifremi Unuttum Metni -->
+            <TextView
+                android:id="@+id/textViewForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="forgotpassclicked"
+                android:text="Şifrenizi mi unuttunuz?"
+                android:textColor="#555555" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

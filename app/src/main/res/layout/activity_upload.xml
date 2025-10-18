@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    tools:context=".UploadActivity">
+
+    <!-- Arka plan resmi üzerine şeffaflık katmanı -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.3"
+        android:background="#000000"/>
+
+    <!-- Gönderi Yükleme Formunu Barındıran CardView (Ortalanmış ve Büyük) -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="#CCFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- CardView İçindeki Dikey Düzen -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Başlık -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YENİ GÖNDERİ PAYLAŞ"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Gönderi Resmi Önizlemesi (Yüksekliği ayarlanabilir) -->
+            <ImageView
+                android:id="@+id/imageViewPostImage"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/image_placeholder_bg"
+                android:clickable="true"
+                android:contentDescription="Gönderi Resmi Önizlemesi. Tıklayarak resim seçin."
+                android:focusable="true"
+                android:onClick="addimageclicked"
+                android:scaleType="centerCrop"
+                android:src="@drawable/outline_add_photo_alternate_24" />
+
+            <!-- Açıklama (Yorum) Girişi -->
+            <EditText
+                android:id="@+id/editTextCaption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bir açıklama yazın..."
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:maxLines="5"
+                android:gravity="top"
+                android:padding="12dp"
+                android:layout_marginBottom="24dp"
+                android:textColorHint="#999999"
+                android:background="@drawable/rounded_edittext_bg"/>
+
+            <!-- Yükleme Butonu (Tüm Genişlik) -->
+            <Button
+                android:id="@+id/buttonUploadPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_primary_bg"
+                android:onClick="sharebuttonclicked"
+                android:paddingVertical="14dp"
+                android:stateListAnimator="@null"
+                android:text="Gönderiyi Paylaş"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
