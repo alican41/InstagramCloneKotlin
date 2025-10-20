@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:paddingBottom="12dp"> <!-- Gönderiler arasında hafif bir boşluk bırakır -->
+
+    <!-- Kullanıcı E-posta Alanı -->
+    <TextView
+        android:id="@+id/textViewUserEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="kullanici.email@ornek.com"
+        android:textColor="#4B0082"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- Paylaşılan Görsel Alanı -->
+    <ImageView
+        android:id="@+id/imageViewPostImage"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:background="#DDDDDD"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <!-- Yorum/Açıklama Alanı -->
+    <TextView
+        android:id="@+id/textViewComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Bu, kullanıcının paylaştığı harika gönderinin açıklamasıdır."
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
+    <!-- Ayırıcı Çizgi (Divider) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="#4B0082" />
+
+</LinearLayout>
+
+

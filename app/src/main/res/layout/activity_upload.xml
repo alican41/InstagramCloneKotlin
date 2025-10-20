@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    tools:context=".UploadActivity">
+    tools:context=".view.UploadActivity">
 
     <!-- Arka plan resmi üzerine şeffaflık katmanı -->
     <View
@@ -40,25 +40,26 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="YENİ GÖNDERİ PAYLAŞ"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#333333"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginBottom="24dp"
+                android:text="SHARE NEW POST"
+                android:textColor="#333333"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <!-- Gönderi Resmi Önizlemesi (Yüksekliği ayarlanabilir) -->
             <ImageView
                 android:id="@+id/imageViewPostImage"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/image_placeholder_bg"
                 android:clickable="true"
                 android:contentDescription="Gönderi Resmi Önizlemesi. Tıklayarak resim seçin."
                 android:focusable="true"
                 android:onClick="addimageclicked"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
                 android:src="@drawable/outline_add_photo_alternate_24" />
 
             <!-- Açıklama (Yorum) Girişi -->
@@ -66,15 +67,15 @@
                 android:id="@+id/editTextCaption"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Bir açıklama yazın..."
-                android:inputType="textMultiLine"
-                android:minLines="3"
-                android:maxLines="5"
-                android:gravity="top"
-                android:padding="12dp"
                 android:layout_marginBottom="24dp"
-                android:textColorHint="#999999"
-                android:background="@drawable/rounded_edittext_bg"/>
+                android:background="@drawable/rounded_edittext_bg"
+                android:gravity="top"
+                android:hint="Write a comment..."
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:minLines="3"
+                android:padding="12dp"
+                android:textColorHint="#999999" />
 
             <!-- Yükleme Butonu (Tüm Genişlik) -->
             <Button
@@ -85,7 +86,7 @@
                 android:onClick="sharebuttonclicked"
                 android:paddingVertical="14dp"
                 android:stateListAnimator="@null"
-                android:text="Gönderiyi Paylaş"
+                android:text="SHARE"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />

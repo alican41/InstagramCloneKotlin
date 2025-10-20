@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <!-- Bu, arka plan resminizin üzerine koyulacak şeffaf katmandır (Opaqueness) -->
     <View
@@ -52,28 +52,28 @@
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="E-posta Adresi"
-                android:inputType="textEmailAddress"
-                android:padding="12dp"
                 android:layout_marginBottom="16dp"
-                android:textColorHint="#999999"
                 android:background="@drawable/rounded_edittext_bg"
                 android:drawableStart="@drawable/baseline_email_24"
-                android:drawablePadding="12dp"/>
+                android:drawablePadding="12dp"
+                android:hint="E-mail"
+                android:inputType="textEmailAddress"
+                android:padding="12dp"
+                android:textColorHint="#999999" />
 
             <!-- Şifre Girişi -->
             <EditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Şifre"
-                android:inputType="textPassword"
-                android:padding="12dp"
                 android:layout_marginBottom="32dp"
-                android:textColorHint="#999999"
                 android:background="@drawable/rounded_edittext_bg"
                 android:drawableStart="@drawable/outline_air_24"
-                android:drawablePadding="12dp"/>
+                android:drawablePadding="12dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColorHint="#999999" />
 
             <!-- Butonlar (Yatay Düzen) -->
             <LinearLayout
@@ -93,7 +93,7 @@
                     android:onClick="loginclicked"
                     android:paddingVertical="12dp"
                     android:stateListAnimator="@null"
-                    android:text="Giriş Yap"
+                    android:text="SIGN IN"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
 
@@ -108,7 +108,7 @@
                     android:onClick="signupclicked"
                     android:paddingVertical="12dp"
                     android:stateListAnimator="@null"
-                    android:text="Kaydol"
+                    android:text="SIGN UP"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
 
@@ -124,7 +124,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:onClick="forgotpassclicked"
-                android:text="Şifrenizi mi unuttunuz?"
+                android:text="Forgot your password?"
                 android:textColor="#555555" />
 
         </LinearLayout>
